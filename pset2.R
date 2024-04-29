@@ -42,3 +42,13 @@ diameter(nw)
 
 nw_updated <- add_vertices(nw, 1, name = 'Jessica Trounstine')
 plot(nw_updated)
+
+# Extra Credit
+tv <- c()
+
+for (num in 1:1000) {
+  x <- transitivity(erdos.renyi.game(19, 20, type = 'gnm'))
+  tv <- append(tv, x)
+}
+
+sum(tv == 0)/1000
